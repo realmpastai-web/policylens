@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-paper text-ink antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 12% -10%, rgba(14, 107, 102, 0.08), transparent 32%),
+      linear-gradient(180deg, rgba(255, 252, 247, 0.65), transparent 280px);
+  }
+
+  ::selection {
+    background: #d5ebe7;
+  }
+
+  :focus-visible {
+    outline: 2px solid #0e6b66;
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2,
+  .font-serif {
+    font-family: Fraunces, Georgia, serif;
+    font-optical-sizing: auto;
+  }
+}
+
+@layer components {
+  .kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-teal;
+  }
+
+  .panel {
+    @apply rounded-2xl border border-line bg-card shadow-card;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink shadow-sm;
+  }
+
+  .field:disabled {
+    @apply cursor-not-allowed bg-paper text-ink-soft;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition;
+  }
+
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-teal text-white hover:bg-teal-deep;
+  }
+
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:border-teal hover:text-teal-deep;
+  }
+
+  .btn-quiet {
+    @apply btn text-ink-soft hover:text-ink;
+  }
+
+  .nav-link {
+    @apply rounded-full px-3 py-1.5 text-sm font-medium text-ink-soft hover:bg-white hover:text-ink;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply bg-white text-ink shadow-sm;
+  }
+}
