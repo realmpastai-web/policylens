@@ -1,0 +1,18 @@
+{
+  "name": "@policylens/core",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PolicyLens rules engine shared by the web app, MCP server, and evals.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
