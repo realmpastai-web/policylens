@@ -68,6 +68,8 @@ npm run build        # apps/web/dist and the MCP bundle
 
 GitHub Actions runs lint, typecheck, unit tests, evals, and both builds on pull requests. A second workflow deploys `apps/web/dist` to GitHub Pages on push to `main`.
 
+The deploy workflow uses `actions/configure-pages` with `enablement: true`, which creates the Pages site if it does not exist. That call needs `administration: write` on the workflow token. If the run fails with “Resource not accessible by integration”, turn Pages on once in the repository: **Settings → Pages → Build and deployment → Source → GitHub Actions**, then re-run **Deploy GitHub Pages**. After the site exists, later deploys only need `pages: write`.
+
 ## MCP server
 
 The server exposes `check_policy_document`, `list_templates`, and `explain_finding`. They call the same rules engine as the site.
